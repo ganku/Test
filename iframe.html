@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+   
+</head>
+<body>
+    <div id="header"></div>
+
+    <div class="container">
+        <div id="sidenav"></div>
+
+        <main>
+            <h2>Welcome to My Website</h2>
+            <p>This is the main content of the page.</p>
+        </main>
+    </div>
+
+    <div id="footer"></div>
+
+    <script>
+        function loadHTML(elementId, url) {
+		alert(url);
+            fetch(url)
+                .then(response => response.text())
+                .then(data => {
+					document.getElementById(elementId).innerHTML = data;
+                });
+        }
+
+        loadHTML('header', 'header.html');
+        loadHTML('footer', 'footer.html');
+		
+    </script>
+</body>
+</html>
+
